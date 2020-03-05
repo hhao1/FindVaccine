@@ -4,7 +4,7 @@ export class Header extends Component {
   render() {
     return (
       <Navbar bg="dark" variant="dark">
-        <Navbar.Brand href="#home">Vaccine Finder</Navbar.Brand>
+        <Navbar.Brand href="#home">Vaccine Locator</Navbar.Brand>
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-end"></Navbar.Collapse>
         <Navbar.Collapse className="justify-content-end"></Navbar.Collapse>

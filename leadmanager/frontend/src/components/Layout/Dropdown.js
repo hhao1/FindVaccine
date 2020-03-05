@@ -1,23 +1,35 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { Form } from "react-bootstrap";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import { getLeads } from "../../actions/leads";
 
 export class Dropdown extends Component {
+  static PropTypes = {
+    leads: PropTypes.array.isRequired
+  };
+
+  componentDidMount() {
+    this.props.getLeads();
+  }
   render() {
     return (
-      <div>
+      <Fragment>
         <Form.Group controlId="exampleForm.ControlSelect1">
           <Form.Label>Select Country</Form.Label>
           <Form.Control as="select">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
+            {this.props.leads.map(lead => (
+              <option key={lead.id}>{lead.Country_Name}</option>
+            ))}
           </Form.Control>
         </Form.Group>
-      </div>
+      </Fragment>
     );
   }
 }
 
-export default Dropdown;
+const mapStateToProps = state => ({
+  leads: state.leadReducer.leads
+});
+
+export default connect(mapStateToProps, { getLeads })(Dropdown);
