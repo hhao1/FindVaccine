@@ -76,18 +76,24 @@ WSGI_APPLICATION = 'leadmanager.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
+# 这里是用mongodb的话，数据库的设置
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'djongo',
+#         'NAME':'vaccine_project',
+#         'HOST':'mongodb+srv://Vaccine:jKGkRrzqrMUjsdPR@cluster0-59clr.mongodb.net/test?retryWrites=true&w=majority',
+#         'USER':'Vaccine',
+#         'PASSWORD': 'jKGkRrzqrMUjsdPR'
+
+
+#     }
+# }
 DATABASES = {
     'default': {
-        'ENGINE': 'djongo',
-        'NAME':'vaccine_project',
-        'HOST':'mongodb+srv://Vaccine:jKGkRrzqrMUjsdPR@cluster0-59clr.mongodb.net/test?retryWrites=true&w=majority',
-        'USER':'Vaccine',
-        'PASSWORD': 'jKGkRrzqrMUjsdPR'
-
-        
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
