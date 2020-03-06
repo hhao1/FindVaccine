@@ -1,14 +1,24 @@
 import React, { Component } from "react";
-import { Navbar } from "react-bootstrap";
+
+import {
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+  NavbarText
+} from 'reactstrap';
 export class Header extends Component {
   render() {
     return (
-      <Navbar bg="dark" variant="dark">
-        <Navbar.Brand href="#home">Vaccine Locator</Navbar.Brand>
-        <Navbar.Toggle />
-        <Navbar.Collapse className="justify-content-end"></Navbar.Collapse>
-        <Navbar.Collapse className="justify-content-end"></Navbar.Collapse>
-        <Navbar.Collapse className="justify-content-end"></Navbar.Collapse>
+      <Navbar color="light" light expand="md">
+        <NavbarBrand href="/">Vaccine Finder</NavbarBrand>
+        <Nav>
+          <NavItem><NavLink href="/">Home</NavLink></NavItem>
+          <NavItem><NavLink href="/">About us</NavLink></NavItem>
+          <NavItem><NavLink href="/">Contact Us</NavLink></NavItem>
+        </Nav>
       </Navbar>
     );
   }
