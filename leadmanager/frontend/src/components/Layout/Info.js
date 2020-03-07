@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Container, Row, Col, Jumbotron} from "reactstrap";
+import { Container, Row, Col, Jumbotron, Badge} from "reactstrap";
 import PropTypes from "prop-types";
 import {connect} from 'react-redux'
 
@@ -34,13 +34,24 @@ class Info extends Component {
 
     render(){
 
+        const {
+            vaccines
+        } = this.props
+
         return(
 
             <Jumbotron className="container mt-4" style={{height: '40em'}}>
                 <Container >
                     <Row>
-                        <Col ref={this.vacinesContainer} xs="6" className="overflow-auto" style={{'height': '35em'}}>
-                            {this.props.vaccines.map(vaccine => <CardContainer name={vaccine.name} description={vaccine.detail} key={vaccine.id}/>)}
+
+                        <Col xs="6">
+                            <Col ref={this.vacinesContainer} className="overflow-auto" style={{'height': '35em'}}>
+                                
+                                {/* present yellow fever on top of the list */}
+                                {vaccines.filter( vaccine => (vaccine.id === 7)).map( vaccine => <CardContainer name={vaccine.name} description={vaccine.detail} key={vaccine.id} isImportant={true}/>)}
+                                {vaccines.filter( vaccine => (vaccine.id !== 7)).map( vaccine => <CardContainer name={vaccine.name} description={vaccine.detail} key={vaccine.id}/>)}
+                            </Col>
+                            
                         </Col>
 
                         <Col xs="6">
