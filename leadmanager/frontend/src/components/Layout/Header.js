@@ -13,7 +13,7 @@ export class Header extends Component {
   render() {
     return (
       <Navbar color="light" light expand="md">
-        <NavbarBrand href="/">Vaccine Finder</NavbarBrand>
+        <NavbarBrand href="/">Vaccine Locator</NavbarBrand>
         <Nav>
           <NavItem><NavLink href="/">Home</NavLink></NavItem>
           <NavItem><NavLink href="/">About us</NavLink></NavItem>
