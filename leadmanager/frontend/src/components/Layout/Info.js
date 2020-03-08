@@ -1,7 +1,8 @@
-import React, { Component } from "react";
-import { Container, Row, Col, Jumbotron, Badge} from "reactstrap";
-import PropTypes from "prop-types";
+import React, { Component } from "react"
+import { Container, Row, Col, Jumbotron, Badge, Button} from "reactstrap"
+import PropTypes from "prop-types"
 import {connect} from 'react-redux'
+import { withRouter } from 'react-router-dom'
 
 import MapContainer from './MapContainer'
 import CardContainer from './CardContainer'
@@ -15,47 +16,63 @@ class Info extends Component {
     constructor(props){
         super(props)
 
-        this.vacinesContainer = React.createRef()
+        this.getLocation = this.getLocation.bind(this)
     }
 
-    static PropTypes = {
+    static propTypes = {
         vaccines: PropTypes.array.isRequired,
         markers: PropTypes.array.isRequired
     };
-
-    handleScroll() {
-        
-    }
     
     componentDidMount() {
         this.props.getVaccines();
         this.props.getMarkers();
     }
 
+    getLocation() {
+        if(navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(this.getCoordinates)
+        }
+        else{
+            alert("Geolocation is not supported by your browser!")
+        }
+    }
+
+    getCoordinates(position){
+        console.log("lat:" + position.coords.latitude + " lng:" + position.coords.longitude)
+    }
+
     render(){
 
         const {
-            vaccines
+            vaccines,
+            markers
         } = this.props
+
+        // this should be in Redux
+        const curDestination = "China"
 
         return(
 
             <Jumbotron className="container mt-4" style={{height: '40em'}}>
                 <Container >
                     <Row>
-
+                        <h3 className="text-secondary">Vaccines you should get befroe travelling to {curDestination}</h3>
+                    </Row>
+                    <Row>                        
                         <Col xs="6">
-                            <Col ref={this.vacinesContainer} className="overflow-auto" style={{'height': '35em'}}>
+
+                            <Col className="overflow-auto" style={{'height': '30em'}}>
                                 
                                 {/* present yellow fever on top of the list */}
-                                {vaccines.filter( vaccine => (vaccine.id === 7)).map( vaccine => <CardContainer name={vaccine.name} description={vaccine.detail} key={vaccine.id} isImportant={true}/>)}
+                                {vaccines.filter( vaccine => (vaccine.id === 7)).map( vaccine => <CardContainer name={"Yellow Fever"} description={vaccine.detail} key={vaccine.id} isImportant={true}/>)}
                                 {vaccines.filter( vaccine => (vaccine.id !== 7)).map( vaccine => <CardContainer name={vaccine.name} description={vaccine.detail} key={vaccine.id}/>)}
                             </Col>
                             
                         </Col>
 
                         <Col xs="6">
-                            <MapContainer/>
+                            <MapContainer markers={markers} userLocation={{}}/>
                         </Col>
                     </Row>
                 </Container>
@@ -72,4 +89,4 @@ const mapStateToProps = state => ({
     markers: state.markerReducer.markers
   });
   
-  export default connect(mapStateToProps, { getVaccines, getMarkers })(Info);
+  export default withRouter(connect(mapStateToProps, { getVaccines, getMarkers })(Info));

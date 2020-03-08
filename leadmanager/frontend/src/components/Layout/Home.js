@@ -4,8 +4,8 @@ import { Link, withRouter } from 'react-router-dom'
 import {connect} from 'react-redux'
 import Select from 'react-select'
 
-import PropTypes from "prop-types";
-import { getLeads } from "../../actions/leads";
+import PropTypes from "prop-types"
+import { getLeads } from "../../actions/leads"
 
 
 
@@ -17,13 +17,13 @@ class Home extends Component {
         this.getLocation = this.getLocation.bind(this)
     }
 
-    static PropTypes = {
+    static propTypes = {
         leads: PropTypes.array.isRequired
     };
     
     componentDidMount() {
-        this.props.getLeads();
-        this.getLocation();
+        this.props.getLeads()
+        this.getLocation()
     }
 
     getLocation() {
