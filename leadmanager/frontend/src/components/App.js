@@ -7,6 +7,7 @@ import Home from './Layout/Home'
 import Info from './Layout/Info'
 import VirusDetail from './Layout/VirusDetail'
 import ContactUs from './Layout/ContactUs'
+import VaccineDetail from './Layout/VaccineDetail'
 
 import Header from './Layout/Header'
 
@@ -21,7 +22,7 @@ class App extends Component {
         <Header/>
         <Router>
           <Switch>
-            <Route exact path="/" render={()=> <ContactUs/>}/>
+            <Route exact path="/" render={()=> <Info/>}/>
             <Route exact path="/info" render={()=> <Info/>}/>
             <Route exact path="/detail" render={()=> <VirusDetail/>}/>
           </Switch>

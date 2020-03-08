@@ -6,11 +6,7 @@ import { Card, Button, CardTitle, CardText, Row, Col } from "reactstrap"
 import { Key } from '../../config';
 import markers from '../../reducers/markers';
 
-const mapStyles = {
-    width: '90%',
-    height: '60%',
-    border: '1px solid gray'
-};
+
 
 class MapContainer extends Component {
 
@@ -19,8 +15,17 @@ class MapContainer extends Component {
     render(){
 
         const {
-            markers
+            markers,
+            mapheight
         } = this.props
+
+        const mapStyles = {
+            width: '90%',
+            height: mapheight? mapheight : '70%',
+            border: '1px solid gray'
+        };
+
+        
 
         const userLocation = {lat: 49.1755761, lng: -123.14568639999997}
 
@@ -36,7 +41,7 @@ class MapContainer extends Component {
                 // bounds={bounds}
                 >
 
-                {/* {markers.map( marker => <Marker name={marker.name} position={{lat: marker.lat, lng: marker.lon}} key={marker.id}/>)} */}
+                {markers.map( marker => <Marker name={marker.name} position={{lat: marker.lat, lng: marker.lon}} key={marker.id}/>)}
             </Map>
                 
         )

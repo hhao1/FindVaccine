@@ -11,6 +11,7 @@ import {
   DropdownToggle,
   DropdownMenu,
   DropdownItem,
+  Button,
   NavbarText
 } from 'reactstrap'
 import { withRouter } from 'react-router-dom'
@@ -63,6 +64,9 @@ export class Header extends Component {
                 Change Destination
             </DropdownToggle>
             <DropdownMenu right>
+
+              <input type="text" name="zipcode" placeholder="Enter zipcode"></input>
+              <DropdownItem divider />
               {leads.map( lead => <DropdownItem key={lead.id} onClick={this.handleDropdownItemClick}>{lead.Country_Name}</DropdownItem>)}
             </DropdownMenu>
           </UncontrolledDropdown>}

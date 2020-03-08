@@ -27,6 +27,7 @@ class Info extends Component {
     componentDidMount() {
         this.props.getVaccines();
         this.props.getMarkers();
+        this.getLocation();
     }
 
     getLocation() {
