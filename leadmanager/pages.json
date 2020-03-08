@@ -1,0 +1,559 @@
+[
+{
+    "model": "contenttypes.contenttype",
+    "pk": 1,
+    "fields": {
+        "app_label": "admin",
+        "model": "logentry"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 2,
+    "fields": {
+        "app_label": "auth",
+        "model": "permission"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 3,
+    "fields": {
+        "app_label": "auth",
+        "model": "group"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 4,
+    "fields": {
+        "app_label": "auth",
+        "model": "user"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 5,
+    "fields": {
+        "app_label": "contenttypes",
+        "model": "contenttype"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 6,
+    "fields": {
+        "app_label": "sessions",
+        "model": "session"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 7,
+    "fields": {
+        "app_label": "leads",
+        "model": "lead"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 8,
+    "fields": {
+        "app_label": "leads",
+        "model": "vaccine"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 9,
+    "fields": {
+        "app_label": "leads",
+        "model": "makers"
+    }
+},
+{
+    "model": "leads.vaccine",
+    "pk": 1,
+    "fields": {
+        "name": "Hepatitis A",
+        "detail": "Hepatitis A is a disease of the liver spread through contaminated food and water or contact with an infected person. All those travelling to regions with a risk of hepatitis A infection should get vaccinated.",
+        "notice": ""
+    }
+},
+{
+    "model": "leads.vaccine",
+    "pk": 2,
+    "fields": {
+        "name": "Hepatitis B",
+        "detail": "Hepatitis B is a disease of the liver spread through blood or other bodily fluids. Travellers who may be exposed (e.g., through sexual contact, medical treatment, sharing needles, tattooing, acupuncture or occupational exposure) should get vaccinated.",
+        "notice": ""
+    }
+},
+{
+    "model": "leads.vaccine",
+    "pk": 3,
+    "fields": {
+        "name": "Influenza",
+        "detail": "Seasonal influenza occurs worldwide. The flu season usually runs from November to April in the northern hemisphere, between April and October in the southern hemisphere and year round in the tropics. Influenza (flu) is caused by a virus spread from person to person when they cough or sneeze or by touching objects and surfaces that have been contaminated with the virus. Get the flu shot.",
+        "notice": ""
+    }
+},
+{
+    "model": "leads.vaccine",
+    "pk": 4,
+    "fields": {
+        "name": "Measles",
+        "detail": "Measles is a highly contagious viral disease. It can spread quickly from person to person by direct contact and through droplets in the air.  Anyone who is not protected against measles is at risk of being infected with it when travelling internationally.  Regardless of where you are going, talk to a health care professional before travelling to make sure you are fully protected against measles.",
+        "notice": ""
+    }
+},
+{
+    "model": "leads.vaccine",
+    "pk": 5,
+    "fields": {
+        "name": "Rabies",
+        "detail": "Rabies is a deadly illness spread to humans through a bite, scratch or lick from an infected animal. Vaccination should be considered for travellers going to areas where rabies exists and who have a high risk of exposure (e.g., are children, have an occupational risk, or in close contact with animals, including free roaming dogs in communities).",
+        "notice": ""
+    }
+},
+{
+    "model": "leads.vaccine",
+    "pk": 6,
+    "fields": {
+        "name": "Tick-borne encephalitis",
+        "detail": "Risk:  Tick-borne encephalitis is present in some areas of this country.  It is a viral disease that affects the central nervous system (brain and spinal cord). It is spread to humans by the bite of infected ticks or when you consume unpasteurized milk products. Recommendation:  Vaccination should be considered for those who may be exposed to ticks during outdoor activities. A vaccine against TBE does exist but is only available in countries where the disease is present.",
+        "notice": ""
+    }
+},
+{
+    "model": "leads.vaccine",
+    "pk": 7,
+    "fields": {
+        "name": "Yellow Fever - Country Entry Requirements",
+        "detail": "Yellow fever is a disease caused by a flavivirus from the bite of an infected mosquito.  Travellers get vaccinated either because it is required to enter a country or because it is recommended for their protection.  Risk  There is no risk of yellow fever in this country. Country Entry Requirement*  Proof of vaccination is required if you are coming from a country where yellow fever occurs.",
+        "notice": ""
+    }
+},
+{
+    "model": "leads.vaccine",
+    "pk": 8,
+    "fields": {
+        "name": "Japanese encephalitis",
+        "detail": "Japanese encephalitis is a viral infection that can cause swelling of the brain. It is spread by the bite of an infected mosquito. Risk is low for most travellers. Vaccination should be considered for those who may be exposed to mosquito bites (e.g., spending a large amount of time outdoors) while travelling in regions with risk of Japanese encephalitis.",
+        "notice": ""
+    }
+},
+{
+    "model": "leads.vaccine",
+    "pk": 9,
+    "fields": {
+        "name": "Polio",
+        "detail": "Polio is present in this country. Polio can be prevented by vaccination, which is part of the routine vaccines for children in Canada.",
+        "notice": "If you are staying more than 4 weeks in this country, you may need to show proof of polio vaccination when you leave the country."
+    }
+},
+{
+    "model": "leads.vaccine",
+    "pk": 10,
+    "fields": {
+        "name": "Typhoid",
+        "detail": "Typhoid is a bacterial infection spread by contaminated food or water. Travellers going to countries in South Asia should speak to a health care professional about getting vaccinated.",
+        "notice": ""
+    }
+},
+{
+    "model": "leads.lead",
+    "pk": 4,
+    "fields": {
+        "Country_Name": "Afghanistan",
+        "Vaccines": [
+            1,
+            2,
+            3,
+            4,
+            9,
+            5,
+            10,
+            7
+        ]
+    }
+},
+{
+    "model": "leads.lead",
+    "pk": 5,
+    "fields": {
+        "Country_Name": "Albania",
+        "Vaccines": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+        ]
+    }
+},
+{
+    "model": "leads.lead",
+    "pk": 6,
+    "fields": {
+        "Country_Name": "Algeria",
+        "Vaccines": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            7
+        ]
+    }
+},
+{
+    "model": "leads.lead",
+    "pk": 7,
+    "fields": {
+        "Country_Name": "American Samoa",
+        "Vaccines": [
+            1,
+            2,
+            3,
+            4,
+            7
+        ]
+    }
+},
+{
+    "model": "leads.makers",
+    "pk": 1,
+    "fields": {
+        "name": "Habour Centre Rexall Store",
+        "lon": "-123.1150070000000000",
+        "lat": "49.2849750000000000"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 1,
+    "fields": {
+        "name": "Can add log entry",
+        "content_type": 1,
+        "codename": "add_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 2,
+    "fields": {
+        "name": "Can change log entry",
+        "content_type": 1,
+        "codename": "change_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 3,
+    "fields": {
+        "name": "Can delete log entry",
+        "content_type": 1,
+        "codename": "delete_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 4,
+    "fields": {
+        "name": "Can view log entry",
+        "content_type": 1,
+        "codename": "view_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 5,
+    "fields": {
+        "name": "Can add permission",
+        "content_type": 2,
+        "codename": "add_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 6,
+    "fields": {
+        "name": "Can change permission",
+        "content_type": 2,
+        "codename": "change_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 7,
+    "fields": {
+        "name": "Can delete permission",
+        "content_type": 2,
+        "codename": "delete_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 8,
+    "fields": {
+        "name": "Can view permission",
+        "content_type": 2,
+        "codename": "view_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 9,
+    "fields": {
+        "name": "Can add group",
+        "content_type": 3,
+        "codename": "add_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 10,
+    "fields": {
+        "name": "Can change group",
+        "content_type": 3,
+        "codename": "change_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 11,
+    "fields": {
+        "name": "Can delete group",
+        "content_type": 3,
+        "codename": "delete_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 12,
+    "fields": {
+        "name": "Can view group",
+        "content_type": 3,
+        "codename": "view_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 13,
+    "fields": {
+        "name": "Can add user",
+        "content_type": 4,
+        "codename": "add_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 14,
+    "fields": {
+        "name": "Can change user",
+        "content_type": 4,
+        "codename": "change_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 15,
+    "fields": {
+        "name": "Can delete user",
+        "content_type": 4,
+        "codename": "delete_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 16,
+    "fields": {
+        "name": "Can view user",
+        "content_type": 4,
+        "codename": "view_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 17,
+    "fields": {
+        "name": "Can add content type",
+        "content_type": 5,
+        "codename": "add_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 18,
+    "fields": {
+        "name": "Can change content type",
+        "content_type": 5,
+        "codename": "change_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 19,
+    "fields": {
+        "name": "Can delete content type",
+        "content_type": 5,
+        "codename": "delete_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 20,
+    "fields": {
+        "name": "Can view content type",
+        "content_type": 5,
+        "codename": "view_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 21,
+    "fields": {
+        "name": "Can add session",
+        "content_type": 6,
+        "codename": "add_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 22,
+    "fields": {
+        "name": "Can change session",
+        "content_type": 6,
+        "codename": "change_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 23,
+    "fields": {
+        "name": "Can delete session",
+        "content_type": 6,
+        "codename": "delete_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 24,
+    "fields": {
+        "name": "Can view session",
+        "content_type": 6,
+        "codename": "view_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 25,
+    "fields": {
+        "name": "Can add lead",
+        "content_type": 7,
+        "codename": "add_lead"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 26,
+    "fields": {
+        "name": "Can change lead",
+        "content_type": 7,
+        "codename": "change_lead"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 27,
+    "fields": {
+        "name": "Can delete lead",
+        "content_type": 7,
+        "codename": "delete_lead"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 28,
+    "fields": {
+        "name": "Can view lead",
+        "content_type": 7,
+        "codename": "view_lead"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 29,
+    "fields": {
+        "name": "Can add vaccine",
+        "content_type": 8,
+        "codename": "add_vaccine"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 30,
+    "fields": {
+        "name": "Can change vaccine",
+        "content_type": 8,
+        "codename": "change_vaccine"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 31,
+    "fields": {
+        "name": "Can delete vaccine",
+        "content_type": 8,
+        "codename": "delete_vaccine"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 32,
+    "fields": {
+        "name": "Can view vaccine",
+        "content_type": 8,
+        "codename": "view_vaccine"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 33,
+    "fields": {
+        "name": "Can add makers",
+        "content_type": 9,
+        "codename": "add_makers"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 34,
+    "fields": {
+        "name": "Can change makers",
+        "content_type": 9,
+        "codename": "change_makers"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 35,
+    "fields": {
+        "name": "Can delete makers",
+        "content_type": 9,
+        "codename": "delete_makers"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 36,
+    "fields": {
+        "name": "Can view makers",
+        "content_type": 9,
+        "codename": "view_makers"
+    }
+}
+]
