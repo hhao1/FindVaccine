@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 import { getLeads } from "../../actions/leads";
 
 export class Dropdown extends Component {
-  static PropTypes = {
+  static propTypes = {
     leads: PropTypes.array.isRequired
   };
 
