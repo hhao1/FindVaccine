@@ -11,4 +11,6 @@ import scrapy
 class ScrapyDatabaseItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
-    pass
+    country = scrapy.Field()
+    name = scrapy.Field()
+    details = scrapy.Field()
