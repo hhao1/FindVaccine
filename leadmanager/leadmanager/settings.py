@@ -25,7 +25,9 @@ SECRET_KEY = 'g-afg6re1nu%q4t*zx%go=#0_wxmu(+s9fl)#+^2ed#u#nz^nd'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["3.22.44.25"]
+ALLOWED_HOSTS = ["*"]
+
+USE_X_FORWARD_PORT = True
 
 
 # Application definition
@@ -43,6 +45,7 @@ INSTALLED_APPS = [
     'frontend'
 ]
 CORS_ORIGIN_ALLOW_ALL = True
+
 #SECURE_SSL_REDIRECT = True
 #SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 MIDDLEWARE = [
